@@ -1,17 +1,12 @@
 # BlogNodejs
-Criando Arquivos estáticos
 
-Realizado o donwload do Bootstrap v5.0
-Criado uma pasta com o nome "public" na pasta do projeto com os arquivos JS e CSS
+Personalização da page no main.handlebar
+# Alterado cor para Dark
+# Retirado a barra de busca
+# Retirado o dropdown
 
-$$
+# Adicionado o Container
 
-Copiado as bibliotecas do site
-https://getbootstrap.com/docs/5.0/getting-started/download/
-(Popper separately, add Popper before our JS, via a CDN preferably.)
+# Criado Novas Rotas
 
-
-$$
-
-Copiado cabeçalho de navegação
-$_navbar
+# Personalizado e adicionado um formulario
