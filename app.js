@@ -7,8 +7,28 @@
     const admin = require('./routes/admin')
     const path = require('path');
     const mongoose = require("mongoose")
+    const session = require("express-session")
+    const flash = require("connect-flash")
 
 // Configurações
+    //Sessão
+        app.use(session({
+            secret: "blogappnodejs",
+            resave: true,
+            saveUninitialized: true
+        }))
+
+    // Flash
+        app.use(flash())
+        
+    //Middleware (Duas variaves Globais)
+        app.use((req, res, next) => {
+                res.locals.success_msg = req.flash("sucess_msg")
+                res.locals.error_msg = req.flash("error_msg")
+    next()
+})
+
+
     // Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
@@ -25,7 +45,6 @@
     
 // Public
         app.use(express.static(path.join(__dirname,"public")))
-
 
 
 // Rotas
