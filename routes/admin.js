@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Rota principal para o painel adm
 router.get('/',(req, res) => {
-    res.send("Página Principal do painel ADM")
+    res.render("admin/index")
 })
 
 router.get('/posts',(req, res) => {
@@ -13,6 +13,5 @@ router.get('/posts',(req, res) => {
 router.get("/categoria",(req, res) =>{
     res.send("Página de Categoria")
 })
-
 
 module.exports = router
