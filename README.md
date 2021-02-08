@@ -1,12 +1,12 @@
 # BlogNodejs
 
 Personalização da page no main.handlebar
-# Alterado cor para Dark
-# Retirado a barra de busca
-# Retirado o dropdown
+$ Alterado cor para Dark
+$ Retirado a barra de busca
+$ Retirado o dropdown
 
-# Adicionado o Container
+$ Adicionado o Container
 
-# Criado Novas Rotas
+$ Criado Novas Rotas
 
-# Personalizado e adicionado um formulario
+$ Personalizado e adicionado um formulario
