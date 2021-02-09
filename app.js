@@ -18,25 +18,27 @@
             saveUninitialized: true
         }))
 
-    // Flash
+// Flash
         app.use(flash())
         
-    //Middleware (Duas variaves Globais)
+//Middleware (Duas variaves Globais)
         app.use((req, res, next) => {
-                res.locals.success_msg = req.flash("sucess_msg")
-                res.locals.error_msg = req.flash("error_msg")
-    next()
+         res.locals.success_msg = req.flash('success_msg')
+         res.locals.error_msg = req.flash('error_msg')
+         next()
 })
 
 
-    // Body Parser
+// Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
-    // Handlebars
+
+// Handlebars
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
         app.set('view engine', 'handlebars');
 
 // Mongoose
+        mongoose.Promise = global.Promise
         mongoose.connect("mongodb://localhost/blogapp").then(()=> {
             console.log("Conectado ao mongo");
         }).catch((err)=>{
