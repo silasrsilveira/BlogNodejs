@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Schema - mongoose.Schema
+const Schema = mongoose.Schema
 
 const Postagem = new Schema({
     titulo:{
@@ -20,7 +20,7 @@ const Postagem = new Schema({
     },
     categoria:{
         type: Schema.Types.ObjectID,
-        ref: categorias,
+        ref: "categorias",
         require: true
     },
     data:{
