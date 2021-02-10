@@ -60,6 +60,20 @@ app.get('/', (req, res) =>{
         res.redirect("/404")
     })
   
+app.get("/postagem/:slug", (req, res) => {
+    Postagem.findOne({slug: req.params.slug}).lean().then((postagem) =>{
+        if(postagem){
+            res.render("postagem/index", {postagem: postagem})
+        }else{
+            req.flash("error_msg", "Essa postagem não Existe")
+            res.redirect("/")
+        }
+    }).catch((err) => {
+            req.flash("error_msg", "Erro Interno")
+            res.redirect("/")
+        })
+})
+
 app.get("/404", (req, res) => {
     res.send("Erro 404!")
 })
