@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-3">Bem-vindo ao Blog do Silas!</h1>
+  <p class="lead">Este blog foi feito com o intuito de aprendedizado e fixação de conteúdo.</p>
+  <hr class="my-3">
+  <p>Espero que curta e tenha uma experiência boa conosco.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+  </p>
+</div>
+<h2>Página de posts</h2>
+
+
+{{#each postagens}}
+<div class="card">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{conteudo}}</p>
+    </div>
+</div>
+{{else}}
+
+    <h5>Nenhuma postagem Encontrada!</h5>
+
+{{/each}}

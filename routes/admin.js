@@ -201,6 +201,26 @@ router.post("/postagem/edit", (req, res) => {
 
 })
 
+router.get("/postagens/deletar/:id", (req, res) => {
+Postagem.deleteOne({id: req.body.id}).then(() =>{
+    req.flash("success_msg", "POSTAGEM EXCLUÍDA COM SUCESSO")
+    res.redirect("/admin/postagens")
+        }).catch((err) => {  
+                  //  console.log(error)      
+                    req.flash("error_msg", "Erro ao salvar a edição")
+                    res.redirect("/admin/postagens")
+  })
+
+})
+
+
+
+
+
+
+
+
+
 
 
 module.exports = router

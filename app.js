@@ -9,6 +9,8 @@
     const mongoose = require("mongoose")
     const session = require("express-session")
     const flash = require("connect-flash")
+    require("./models/Postagem")
+    const Postagem = mongoose.model("postagens")
 
 // Configurações
     //Sessão
@@ -51,7 +53,17 @@
 
 // Rotas
 app.get('/', (req, res) =>{
-    res.send('Rota Principal')
+    Postagem.find().lean().populate("categoria").sort({data: "desc"}).then((postagens) => {
+        res.render("index", {postagens: postagens}) 
+    }).catch((err) =>{
+        req.flash("error_msg", "Erro Interno")
+        res.redirect("/404")
+    })
+  
+app.get("/404", (req, res) => {
+    res.send("Erro 404!")
+})
+
 })
     app.get('/posts', (req, res) =>{
         res.send("Lista de Posts")
@@ -64,3 +76,4 @@ const PORT = 8081
 app.listen(PORT, ()=> {
     console.log("Servidor Ligado!");
 })
+
