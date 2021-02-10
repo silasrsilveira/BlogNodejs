@@ -10,7 +10,8 @@
                 <h4>{{titutlo}}</h4>
                <b><p>Descrição:</b> {{descricao}}</p></b>
                <b><small>Data:</b>  {{data}}</small><br>
-               <b> <small>Categoria:</b> {{categoria.nome}}</small>
+               <b><small>Categoria:</b> {{categoria.nome}}</small>
+               <a href="/admin/postagens/edit/{{_id}}"><br><button type="button" class="btn btn-success mt-3">Editar postagem</button></a>
             </div>
         </div>
 {{else}}
