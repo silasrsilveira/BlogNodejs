@@ -101,8 +101,9 @@ app.get("/categorias/:slug", (req, res) => {
 
             }).catch((err) => {
                 req.flash("error_msg", "Erro ao listar os posts!")
-                 res.redirect("/")
+                res.redirect("/")
             })
+            
         }else{
             req.flash("error_msg", "Essa categoria não Existe")
             res.redirect("/")
