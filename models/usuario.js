@@ -10,10 +10,17 @@ const Usuario = new Schema({
         type: String,
         require: true,
     },
+    // Campo 0 Não é admin 1 é admin
+    eAdmin: {
+        type: Number,
+        default: 0
+    },
     senha: {
         type: String,
         require: true
     },
 })
+
+
 
 mongoose.model("usuarios", Usuario)
