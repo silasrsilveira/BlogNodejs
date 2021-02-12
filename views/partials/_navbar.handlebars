@@ -12,13 +12,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/categorias">Categorias</a>
         </li>
+{{#if user}}
+
+{{else}}
+
 
         <li class="nav-item">
           <a class="nav-link enable" href="/usuarios/login" tabindex="-1" aria-disabled="false">Login</a>
            </li>
         <li class="nav-item">
-          <a type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" href="/usuarios/registro" tabindex="-1" aria-disabled="false"> Cadastre-se</a>
+          <a class="btn btn-primary" href="/usuarios/registro" tabindex="-1" aria-disabled="false">Cadastre-se</a>
         </li>
+{{/if}}
       </ul>
     </div>
   </div>

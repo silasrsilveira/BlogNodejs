@@ -1,14 +1,24 @@
+
 <div class="shadow p-3 mb-5 bg-white rounded"><div class="jumbotron">
   <h1 class="display-4">Bem-vindo ao Blog do Silas!</h1> </tr>
-  <p class="lead">Este blog foi feito com o intuito de aprendedizado e fixação de conteúdo.</p>
+
+  <p class="lead">Este blog foi feito com o intuito de aprendizado e fixação de conteúdo.</p>
+
   <hr class="my-4">
-  <p>Espero que curta e tenha uma experiência boa conosco.</p>
+
+{{#if user}}
+<div class="mt-4"></div>
+{{else}}
+
+
+  <p>Espero que curta e tenha uma ótima experiência conosco.</p>
+
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="usuarios/registro" role="button">Crie uma conta</a>
   </p>
   </div>
 </div>
-
+{{/if}}
 
 
 
